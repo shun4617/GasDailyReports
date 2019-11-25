@@ -1,0 +1,136 @@
+
+スタンプ１ : {
+    "token": "xM05P0D1drui3Jb18LiCVfNB",
+    "team_id": "THRRB207R",
+    "api_app_id": "AHTM5D7R9",
+    "event": {
+        "type": "reaction_added",
+        "user": "UHAT291LJ",
+        "item": {
+            "type": "message",
+            "channel": "CHQM5CJG4",
+            "ts": "1559455785.001200"
+        },
+        "reaction": "pig_nose",
+        "item_user": "UHAT291LJ",
+        "event_ts": "1559457618.001700"
+    },
+    "type": "event_callback",
+    "event_id": "EvK6LA4CBX",
+    "event_time": 1559457618,
+    "authed_users": [
+        "UJ56G6AU8"
+    ]
+}
+
+スタンプ２ : {
+    "token": "xM05P0D1drui3Jb18LiCVfNB",
+    "team_id": "THRRB207R",
+    "api_app_id": "AHTM5D7R9",
+    "event": {
+        "type": "reaction_added",
+        "user": "UHAT291LJ",
+        "item": {
+            "type": "message",
+            "channel": "CHQM5CJG4",
+            "ts": "1559455785.001200"
+        },
+        "reaction": "+1",
+        "item_user": "UHAT291LJ",
+        "event_ts": "1559457771.001800"
+    },
+    "type": "event_callback",
+    "event_id": "EvK8G38JH5",
+    "event_time": 1559457771,
+    "authed_users": [
+        "UJ56G6AU8"
+    ]
+}
+スタンプ削除 : {
+    "token": "xM05P0D1drui3Jb18LiCVfNB",
+    "team_id": "THRRB207R",
+    "api_app_id": "AHTM5D7R9",
+    "event": {
+        "type": "reaction_removed",
+        "user": "UHAT291LJ",
+        "item": {
+            "type": "message",
+            "channel": "CHQM5CJG4",
+            "ts": "1559455785.001200"
+        },
+        "reaction": "+1",
+        "item_user": "UHAT291LJ",
+        "event_ts": "1559458291.001900"
+    },
+    "type": "event_callback",
+    "event_id": "EvJV8NUAG2",
+    "event_time": 1559458291,
+    "authed_users": [
+        "UJ56G6AU8"
+    ]
+}
+
+編集１: {
+    "token": "xM05P0D1drui3Jb18LiCVfNB",
+    "team_id": "THRRB207R",
+    "api_app_id": "AHTM5D7R9",
+    "event": {
+        "type": "message",
+        "subtype": "message_changed",
+        "hidden": true,
+        "message": {
+            "client_msg_id": "eaeaa033-c93f-48fd-9549-6bb17a5cfc8f",
+            "type": "message",
+            "text": "[日付] 2019/06/02\n\n[今日の目標]\nbぬこ=・ω・==・ω・==・ω・ddさらに更新\n\n[今日の作業]\nこぉお=・ω・==・ω・=\n\n[今日の考察]\nわーい\n\n[明日の目標]\nネコォわーーい",
+            "user": "UHAT291LJ",
+            "edited": {
+                "user": "UHAT291LJ",
+                "ts": "1559457945.000000"
+            },
+            "ts": "1559457061.004600"
+        },
+        "channel": "DHYS3PGCR",
+        "previous_message": {
+            "client_msg_id": "eaeaa033-c93f-48fd-9549-6bb17a5cfc8f",
+            "type": "message",
+            "text": "[日付] 2019/06/02\n\n[今日の目標]\nbぬこ=・ω・==・ω・==・ω・ddさらに更新\n\n[今日の作業]\nこぉお=・ω・==・ω・=\n\n[今日の考察]\nわーい\n\n[明日の目標]\nネコォ",
+            "user": "UHAT291LJ",
+            "ts": "1559457061.004600",
+            "edited": {
+                "user": "UHAT291LJ",
+                "ts": "1559457545.000000"
+            }
+        },
+        "event_ts": "1559457945.004800",
+        "ts": "1559457945.004800",
+        "channel_type": "im"
+    },
+    "type": "event_callback",
+    "event_id": "EvJV8MTQHY",
+    "event_time": 1559457945,
+    "authed_users": [
+        "UJ56G6AU8"
+    ]
+}
+
+新規投稿 : {
+    "token": "xM05P0D1drui3Jb18LiCVfNB",
+    "team_id": "THRRB207R",
+    "api_app_id": "AHTM5D7R9",
+    "event": {
+        "client_msg_id": "f99db1f6-0074-4049-80ce-a1410630d5c3",
+        "type": "message",
+        "text": "ほげ",
+        "user": "UHAT291LJ",
+        "ts": "1559458630.005000",
+        "channel": "DHYS3PGCR",
+        "event_ts": "1559458630.005000",
+        "channel_type": "im"
+    },
+    "type": "event_callback",
+    "event_id": "EvK6M5URJ4",
+    "event_time": 1559458630,
+    "authed_users": [
+        "UJ56G6AU8"
+    ]
+}
