@@ -1,4 +1,10 @@
 function install() {
+            
+    var doSheetExist = Browser.msgBox("インストール処理を開始しますか？", "すでにインストールされている場合は、対象シートが初期化されます。", Browser.Buttons.OK_CANCEL)
+    if (doSheetExist  == 'cancel') {
+        Browser.msgBox("処理を中止します。")
+        return
+    }
     var sheets = ['Settings', 'Users', 'DailyReports', 'Greeting']
     var existsheets =[]
     sheets.forEach(function (elem) {
@@ -8,15 +14,6 @@ function install() {
         
     })
 
-    //対象シートがすでに存在している場合に処理を継続するか確認
-    if (existsheets.length !== 0){
-        
-        var doSheetExist = Browser.msgBox("シートが存在します。", "インストール処理を継続しますか？", Browser.Buttons.OK_CANCEL)
-            if (doSheetExist  == 'cancel') {
-                Browser.msgBox("処理を中止します。")
-                return
-            }
-    }
 
     sheets.forEach(function (elem) {
         if (SPREAD_SHEET.getSheetByName(elem) == null) {
