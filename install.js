@@ -72,11 +72,11 @@ function install() {
         SS.getRange('D6').setValue('BotUserOAuthAccessToken').setBackground('#434343').setFontColor('#ffffff').setFontSize(10)
         SS.getRange('E6').setValue('').setBorder(true, true, true, true, false, false)
 
-        SS.getRange('D6').setValue('SlackEventApiToken').setBackground('#434343').setFontColor('#ffffff').setFontSize(10)
-        SS.getRange('E6').setValue('').setBorder(true, true, true, true, false, false)
+        SS.getRange('D7').setValue('SlackEventApiToken').setBackground('#434343').setFontColor('#ffffff').setFontSize(10)
+        SS.getRange('E7').setValue('').setBorder(true, true, true, true, false, false)
 
-        SS.getRange('D6').setValue('DailyReportChannelId').setBackground('#434343').setFontColor('#ffffff').setFontSize(10)
-        SS.getRange('E6').setValue('').setBorder(true, true, true, true, false, false)
+        SS.getRange('D8').setValue('DailyReportChannelId').setBackground('#434343').setFontColor('#ffffff').setFontSize(10)
+        SS.getRange('E8').setValue('').setBorder(true, true, true, true, false, false)
 
         
         //Usersの内容

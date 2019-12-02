@@ -11,7 +11,7 @@ var Settings = {
     },
     set: function () {
         var values = {
-            startdaytime: this.sheet().getRange(5, 2).getValue(),
+            startdaytime: this.sheet().getRange(5, 2).getDisplayValue(),
             remindtime: {
                 weekday: this.sheet().getRange(10, 2).getValue() == '通知する',
                 holiday: this.sheet().getRange(11, 2).getValue() == '通知する',

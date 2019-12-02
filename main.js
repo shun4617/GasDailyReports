@@ -179,7 +179,8 @@ function isTime(time, now){
 	var clock = Moment.moment(time, 'H:m')
 	if(now.hours() == clock.hours()){
 		return true
-	}　　　
+	}
+	return false
 }
 
 
