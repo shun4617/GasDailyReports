@@ -4,12 +4,13 @@
     var Slack = (function() {
       /**
       * Slackを初期化
-      * @param  {String} token(option 初期値：KEYS.BotUserOAuthAccessToken)
+      * @param  {String} token(option 初期値：settings.bot.BotUserOAuthAccessToken)
       */
       function Slack(token){
-        var options = options || {};
-        this.EntryURL ="https://slack.com/api/";
-        this.token = token || KEYS.BotUserOAuthAccessToken // APIトークン　（デフォルト値を設定）
+        var settings = Settings.get()
+        var options = options || {}
+        this.EntryURL ="https://slack.com/api/"
+        this.token = token || settings.bot.BotUserOAuthAccessToken // APIトークン　（デフォルト値を設定）
       }
 
       /**

@@ -29,7 +29,9 @@ var Settings = {
             },
             bot: {
                 OAuthAccessToken: this.sheet().getRange(5, 5).getValue(),
-                BotUserId: this.sheet().getRange(6, 5).getValue()
+                BotUserOAuthAccessToken: this.sheet().getRange(6, 5).getValue(),
+                SlackEventApiToken: this.sheet().getRange(7, 5).getValue(),
+                DailyReportChannelId: this.sheet().getRange(8, 5).getValue()
             }
         }
         
