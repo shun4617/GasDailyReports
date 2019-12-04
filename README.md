@@ -8,7 +8,9 @@ GAS上に構築されたslackbotでの日報管理ツールです。
 ### 主な機能
 
 - 平日、休日（祝日含む）別指定時間による目標設定と日報のリマインド
-- 週間リポートを指定曜日の時間に自動投稿
+- チャンネルに参加者の日報が投稿される
+- チャンネルに投稿された日報は、スタンプにて評価できる
+- スタンプの週間リポートを指定曜日の時間に自動的に投稿する
 
 
 ## 利用手順
@@ -63,6 +65,103 @@ $ clasp push
 
 #### SpreadSheetの初期設定
 
+スクリプトエディタより、`install.gs`を選択する。
+
+[実行] > [関数を実行] > [install] を選択する。
+
+スプレットシートを開くとダイアログが表示されているので、[はい]を選択する。
+
+必要なシートが作成されます。
+
+[Setting]シートで必要な設定を行います。
+[Greeting]シートで朝と夕の最初の挨拶を追加できます。
+[Users]と[DailyReports]は日報管理用シートです。
+
+スクリプトエディタに戻り、
+
+[公開]  > [ウェブ アプリケーションとして導入...]を選択する。
+
+ダイアログが表示されるので、
+
+[Who has access to the app:]を[Anyone,even anonymous]に変更する。
+
+[変更]を押す。
+
+権限について認証を求められるので認証する。
+
+次にでてきたURLは、Slackに利用するので控えておく
+
+
+
+
+#### Slackの設定
+
+#### チャンネル設定
+参加者の日報を投稿するチャンネルを作成する。
+チャンネルのURLの/で区切られているもののCから始まる部分を
+SpreadSheetの[Settings]シートにある[DailyReportChannelId]に記載する。
+
+#### Slack Appの作成
+[https://api.slack.com/app](https://api.slack.com/app)を開く
+
+[Start Building]を開く
+
+任意のApp Nameを入力し、　Development Slack Workspaceで対象のワークスペースを選択し、Create Appを選択
+
+Appの設定画面に変わります。
+
+下の方に[Verification Token]があるので
+これを、先に用意したSpreadSheetの[Settings]シートにある[SlackEventApiToken]へ入力する。
+
+
+#### Bot Userを作成
+先の手順を実施すると、Appの設定に変わります。
+
+そのサイドバーから[Bot User] を開き
+Display name、Default usernameを入力し,
+Always Show My Bot as Online を Onにして作成する。
+
+#### OAuth & Permissionsの設定
+
+サイドバーより、[OAuth & Permissions]を開き
+
+[Add New Redirect URL]を押して、先ほど控えたURLを入力する。
+
+[Save URLs]を押して保存する。
+
+
+次に、[Install App to Workspace]を押す。
+承認を求められるので、承認する。
+
+
+画面が遷移し OAuth Access Tokenが発行される。
+OAuth Access Token と Bot User OAuth Access Token　を
+先に用意したSpreadSheetの[Settings]シートにある[OAuthAccessToken]と[Bot UserOAuthAccessToken]へ入力する。
+
+
+#### Event Subscriptionsの設定
+　サイバーより、[Event Subscriptions]を開き
+[Enable Events]をONにする。
+
+Request URLに先ほど控えたURLを改めて入力する。
+
+Request URLの右側にVerifiedが表示されれば認証が成功。
+
+[Subscribe to bot events]を開き
+[Add Bot User Event]を押して
+reaction_addedとreaction_removedを選択して追加する。
+
+[Subscribe to workspace eventsを開き
+[Add Bot User Event]を押して
+team_joinを選択して追加する。
+
+
+#### 先ほど作成したチャンネルにAppを追加する
+
+先ほど作成したチャンネルを開きappを追加する。
+
+
+これで動作します。
 
 ## 注意点
 
