@@ -116,10 +116,15 @@ SlackItem.prototype.init = function (e){
         throw new Error('e.postData.contentsがありません')
     }
     var postData = JSON.parse(e.postData.contents)
+    //url_verification
+    if(postData.type ==='url_verification') {
+        result.type = 'url_verification'
+        result.challenge = '' + postData.challenge
+        return result
+    }
 	if (postData.event.type === 'message') {
 
         //DM新規投稿
-        
 		if (!postData.event.subtype) {
             result.type = 'DM新規投稿'
             result.token = ''+postData.token
@@ -153,7 +158,7 @@ SlackItem.prototype.init = function (e){
                 result.botid = postData.event.bot_id
             }
             return result
-		}
+        }
 	}
 
 	//スタンプ追加

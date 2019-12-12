@@ -56,6 +56,7 @@ function postDailyEveningMessage(userid, today){
 */
 function postDailyReportFromDailog(slackitem, type){
 	var slack = new Slack()
+	var settings = Settings.get()
 	console.log('postDailyReport(): '+JSON.stringify(slackitem))
   
 	//ユーザー情報確認
@@ -85,12 +86,12 @@ function postDailyReportFromDailog(slackitem, type){
 	if(!postedDailyReport){
 		//新規追加
 		console.log('判定：新規')
-		var PostedSlackDailyReportChannnel = slack.postMessage(KEYS.DailyReportChannelId, Channelmsg)
+		var PostedSlackDailyReportChannnel = slack.postMessage(settings.bot.DailyReportChannelId, Channelmsg)
 		var PostedSlackDM = slack.postMessage(user.DMchannel, DMmsg)
 	}else{
 		//更新
 		console.log('判定：更新')
-		var PostedSlackDailyReportChannnel = slack.updateMessage(KEYS.DailyReportChannelId, postedDailyReport.postts, Channelmsg)
+		var PostedSlackDailyReportChannnel = slack.updateMessage(settings.bot.DailyReportChannelId, postedDailyReport.postts, Channelmsg)
 		var PostedSlackDM = slack.updateMessage(user.DMchannel, postedDailyReport.ts, DMmsg)
 	}
 

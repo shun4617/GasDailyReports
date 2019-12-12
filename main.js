@@ -16,6 +16,7 @@ var DebugSheet = SPREAD_SHEET.getSheetByName('Debug');
 
 //投稿時時の関数
 function doPost(e) {
+	var settings = Settings.get()
 	console.log('e : '+ JSON.stringify(e))
 	if(!e.postData){
 		throw new Error('payloadが不正です' + JSON.stringify(e))
@@ -24,7 +25,7 @@ function doPost(e) {
 	console.log('slackitem : '+ JSON.stringify(slackitem))
 	
 	//tokenチェック
-	if (KEYS.SlackEventApiToken !== slackitem.token) {
+	if (settings.bot.SlackEventApiToken !== slackitem.token) {
 		throw new Error('トークンがありません')
 	}
 	//確認関連
@@ -103,6 +104,9 @@ function doPost(e) {
 	if(slackitem.type == 'メンバー追加'){
 
 	}
+	if(slackitem.type == 'url_verification'){
+		return ContentService.createTextOutput(JSON.stringify({'challenge': slackitem.challenge})).setMimeType(ContentService.MimeType.JSON)
+	}
 }
 
 
@@ -175,7 +179,8 @@ function isTime(time, now){
 	var clock = Moment.moment(time, 'H:m')
 	if(now.hours() == clock.hours()){
 		return true
-	}　　　
+	}
+	return false
 }
 
 
